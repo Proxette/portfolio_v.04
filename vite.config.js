@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/proxettesite/',
+  base: '/portfolio_v.04/',
   server: { host: true, port: 5173 }
 });
