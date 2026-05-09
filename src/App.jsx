@@ -1,12 +1,20 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import Prism from './components/Prism';
 import Masonry from './components/Masonry';
 import WorkTile from './components/WorkTile';
+import Lightbox from './components/Lightbox';
 import { works, filters } from './data/works';
 
 export default function App() {
   const [filter, setFilter] = useState('all');
   const [toast, setToast] = useState(null);
+  const [selected, setSelected] = useState(null);
+
+  const showToast = useCallback((msg) => {
+    setToast(msg);
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => setToast(null), 2400);
+  }, []);
 
   const items = useMemo(
     () => works
@@ -14,16 +22,16 @@ export default function App() {
       .map(w => ({
         id: w.id,
         height: w.height,
-        render: () => <WorkTile item={w} onToast={(m) => showToast(m)} />
+        render: () => (
+          <WorkTile
+            item={w}
+            onToast={showToast}
+            onSelect={w.kind === 'image' ? setSelected : undefined}
+          />
+        ),
       })),
-    [filter]
+    [filter, showToast]
   );
-
-  const showToast = (msg) => {
-    setToast(msg);
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => setToast(null), 2400);
-  };
 
   return (
     <>
@@ -60,11 +68,8 @@ export default function App() {
         </div>
         <h1 className="glitch" data-text="proxette">proxette</h1>
         <span className="angel-tag">proxette means angel</span>
-        <p className="subtitle">
-          <span className="tag">[ designer ]</span>
-          <span className="tag">[ 3D ]</span>
-          <span className="tag">[ sound ]</span>
-          <span className="tag">[ AI / generative ]</span>
+        <p className="offer-line">
+          Обложка · 3D · трек&nbsp;&nbsp;—&nbsp;&nbsp;от&nbsp;1&nbsp;500&nbsp;₽
         </p>
         <div className="lead-stack">
           <span>Дизайн<i className="ld">.</i></span>
@@ -157,6 +162,9 @@ export default function App() {
         </div>
       </section>
 
+      {selected && (
+        <Lightbox item={selected} onClose={() => setSelected(null)} />
+      )}
       {toast && <div className="toast">{toast}</div>}
     </>
   );
