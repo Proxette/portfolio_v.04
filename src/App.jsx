@@ -57,25 +57,23 @@ export default function App() {
         <nav>
           <a href="#about">about</a>
           <a href="#works">works</a>
+          <a href="#rates">rates</a>
           <a href="#contact">contact</a>
         </nav>
       </header>
 
       <section className="hero">
         <div className="hero-meta">
-          <span>// portfolio_v.04</span>
           <span className="status"><i />online</span>
         </div>
         <h1 className="glitch" data-text="proxette">proxette</h1>
         <span className="angel-tag">proxette means angel</span>
-        <p className="offer-line">
-          Обложка · 3D · трек&nbsp;&nbsp;—&nbsp;&nbsp;от&nbsp;1&nbsp;500&nbsp;₽
-        </p>
         <div className="lead-stack">
           <span>Дизайн<i className="ld">.</i></span>
           <span>3D<i className="ld">.</i></span>
           <span>ИИ<i className="ld">.</i></span>
-          <span>Генеративное&nbsp;искусство<i className="ld">.</i></span>
+          <span>Боты<i className="ld">.</i></span>
+          <span>Лендинги<i className="ld">.</i></span>
         </div>
         <div className="hero-cta">
           <a href="#works" className="btn solid">смотреть работы →</a>
@@ -138,15 +136,55 @@ export default function App() {
         />
       </section>
 
-      <section id="contact" className="contact">
+      <section id="rates" className="rates">
         <div className="section-head">
           <span className="num">03</span>
+          <h2>rates</h2>
+        </div>
+        <div className="rates-grid">
+          <div className="rate-row">
+            <span className="rate-name">Обложка&nbsp;/ постер</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;1&nbsp;500&nbsp;₽</span>
+          </div>
+          <div className="rate-row">
+            <span className="rate-name">3D-рендер</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;1&nbsp;500&nbsp;₽</span>
+          </div>
+          <div className="rate-row">
+            <span className="rate-name">ИИ-арт&nbsp;/ генерация</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;1&nbsp;500&nbsp;₽</span>
+          </div>
+          <div className="rate-row">
+            <span className="rate-name">Трек&nbsp;/ саунд-дизайн</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;1&nbsp;500&nbsp;₽</span>
+          </div>
+          <div className="rate-row">
+            <span className="rate-name">Лендинг</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;5&nbsp;000&nbsp;₽</span>
+          </div>
+          <div className="rate-row">
+            <span className="rate-name">Телеграм-бот</span>
+            <span className="rate-dots" />
+            <span className="rate-price">от&nbsp;3&nbsp;000&nbsp;₽</span>
+          </div>
+        </div>
+        <p className="rates-note">Точная цена зависит от объёма. Пишите — обсудим.</p>
+      </section>
+
+      <section id="contact" className="contact">
+        <div className="section-head">
+          <span className="num">04</span>
           <h2>contact</h2>
         </div>
         <div className="contact-card">
           <div className="contact-inner">
             <p className="contact-lead">Есть задача — пиши.</p>
-            <p className="contact-sub">Обложка, 3D, ИИ-арт, трек. Разберёмся.</p>
+            <p className="contact-sub">Дизайн, 3D, ИИ, боты, лендинги. Разберёмся.</p>
             <a href="https://t.me/proxette" target="_blank" rel="noopener" className="btn big solid">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 2 11 13" />
@@ -156,7 +194,7 @@ export default function App() {
             </a>
             <div className="contact-extra">
               <span>&copy; {new Date().getFullYear()} proxette</span>
-              <span>design · 3d · sound</span>
+              <span>design · 3d · sound · bots · landing</span>
             </div>
           </div>
         </div>

@@ -129,6 +129,7 @@ h1.glitch::before{
 .lead-stack > span:nth-child(2){opacity:.68}
 .lead-stack > span:nth-child(3){opacity:.42}
 .lead-stack > span:nth-child(4){opacity:.24;font-size:clamp(18px,2.2vw,34px);font-weight:400}
+.lead-stack > span:nth-child(5){opacity:.14;font-size:clamp(14px,1.7vw,26px);font-weight:300}
 .lead-stack i.ld{font-style:normal;color:var(--gold)}
 
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
@@ -153,7 +154,7 @@ h1.glitch::before{
 .btn.big{padding:24px 40px;font-size:11px}
 
 /* ===== about ===== */
-.about,.works,.contact{content-visibility:auto;contain-intrinsic-size:0 800px}
+
 .about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
   background:var(--line);border:1px solid var(--line)}
 .about-card{background:var(--bg-2);padding:40px 32px;min-height:260px;
@@ -260,6 +261,37 @@ h1.glitch::before{
 .play-btn:hover{transform:translate(-50%,-50%) scale(1.08);
   background:var(--fg);color:var(--bg);border-color:var(--fg);
   box-shadow:0 0 40px rgba(196,160,64,.18)}
+
+/* ===== rates ===== */
+.about,.works,.rates,.contact{content-visibility:auto;contain-intrinsic-size:0 800px}
+.rates-grid{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--line);
+}
+.rate-row{
+  display:flex;align-items:baseline;gap:0;
+  padding:22px 32px;
+  border-bottom:1px solid var(--line);
+  transition:background .3s;
+}
+.rate-row:last-child{border-bottom:none}
+.rate-row:hover{background:var(--bg-2)}
+.rate-name{
+  font-family:var(--sans);font-size:18px;font-weight:400;
+  color:var(--fg);letter-spacing:-.01em;white-space:nowrap;
+}
+.rate-dots{
+  flex:1;border-bottom:1px dotted var(--muted-soft);
+  margin:0 20px;position:relative;top:-4px;opacity:.4;
+}
+.rate-price{
+  font-family:var(--mono);font-size:13px;font-weight:500;
+  color:var(--gold);letter-spacing:.06em;white-space:nowrap;
+}
+.rates-note{
+  margin-top:24px;font-family:var(--mono);font-size:10px;
+  color:var(--muted);letter-spacing:.22em;text-transform:uppercase;font-weight:400;
+}
 
 /* ===== contact ===== */
 .contact-card{position:relative;border:1px solid var(--line);background:var(--bg-2);overflow:hidden}
